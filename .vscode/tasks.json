@@ -1,0 +1,70 @@
+{
+    "tasks": [{
+        "type": "shell",
+        "label": "compiletask1",
+        "command": "/usr/bin/g++",
+        "args": [
+            "-std=c++11",
+            "-c",
+            "-L",
+            // "/usr/local/Cellar/ffmpeg/4.2.2_2/include",
+            "/Users/zhushijie/cplusheader",
+            "-lavdevice", 
+            "-lavfilter",
+            "-lavformat",
+            "-g",
+            // "/Users/zhushijie/cplusheader/jaysonlearn.cpp",
+            "${file}",
+            // "-o",
+            // "${fileDirname}/test"
+        ],
+        "options": {
+            "cwd": "/usr/bin"
+        }
+    },{
+        "type": "shell",
+        "label": "compiletask2",
+        "command": "/usr/bin/g++",
+        "args": [
+            "-std=c++11",
+            "-c",
+            "-L",
+            // "/usr/local/Cellar/ffmpeg/4.2.2_2/include",
+            "/Users/zhushijie/cplusheader",
+            "-lavdevice", 
+            "-lavfilter",
+            "-lavformat",
+            "-g",
+            // "/Users/zhushijie/cplusheader/jaysonlearn.cpp",
+            "${file}",
+            // "-o",
+            // "${fileDirname}/test"
+        ],
+        "options": {
+            "cwd": "/usr/bin"
+        }
+    },{
+        "type": "shell",
+        "label": "compiletask3",
+        "command": "/usr/bin/g++",
+        "args": [
+            "-std=c++11",
+            "-c",
+            "-L",
+            // "/usr/local/Cellar/ffmpeg/4.2.2_2/include",
+            "/Users/zhushijie/cplusheader",
+            "-lavdevice", 
+            "-lavfilter",
+            "-lavformat",
+            "-g",
+            // "/Users/zhushijie/cplusheader/jaysonlearn.cpp",
+            "${file}",
+            // "-o",
+            // "${fileDirname}/test"
+        ],
+        "options": {
+            "cwd": "/usr/bin"
+        }
+    }],
+    "version": "2.0.0"
+}

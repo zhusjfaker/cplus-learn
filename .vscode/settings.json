@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "Dockerfile_testing": "dockerfile",
+        "Dockerfile_base": "dockerfile",
+        "*.js": "javascriptreact",
+        "*.html": "html",
+        "iostream": "cpp",
+        "iosfwd": "cpp",
+        "string": "cpp",
+        "sstream": "cpp",
+        "ostream": "cpp",
+        "bitset": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
