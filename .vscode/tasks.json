@@ -1,69 +1,46 @@
 {
     "tasks": [{
         "type": "shell",
-        "label": "compiletask1",
-        "command": "/usr/bin/g++",
+        "label": "test",
+        "command": "g++",
         "args": [
             "-std=c++11",
-            "-c",
-            "-L",
-            // "/usr/local/Cellar/ffmpeg/4.2.2_2/include",
-            "/Users/zhushijie/cplusheader",
-            "-lavdevice", 
-            "-lavfilter",
-            "-lavformat",
             "-g",
-            // "/Users/zhushijie/cplusheader/jaysonlearn.cpp",
             "${file}",
-            // "-o",
-            // "${fileDirname}/test"
+            "-o",
+            "${workspaceFolder}/index"
         ],
         "options": {
-            "cwd": "/usr/bin"
+            "cwd": "${workspaceFolder}"
         }
     },{
         "type": "shell",
-        "label": "compiletask2",
-        "command": "/usr/bin/g++",
+        "label": "testoutput",
+        "command": "g++",
         "args": [
             "-std=c++11",
-            "-c",
-            "-L",
-            // "/usr/local/Cellar/ffmpeg/4.2.2_2/include",
-            "/Users/zhushijie/cplusheader",
-            "-lavdevice", 
-            "-lavfilter",
-            "-lavformat",
             "-g",
-            // "/Users/zhushijie/cplusheader/jaysonlearn.cpp",
             "${file}",
-            // "-o",
-            // "${fileDirname}/test"
+            "./abc/abc.cpp",
+            "-o",
+            "${workspaceFolder}/index"
         ],
         "options": {
-            "cwd": "/usr/bin"
+            "cwd": "${workspaceFolder}"
         }
     },{
         "type": "shell",
-        "label": "compiletask3",
-        "command": "/usr/bin/g++",
+        "label": "compile",
+        "command": "g++",
         "args": [
             "-std=c++11",
             "-c",
-            "-L",
-            // "/usr/local/Cellar/ffmpeg/4.2.2_2/include",
-            "/Users/zhushijie/cplusheader",
-            "-lavdevice", 
-            "-lavfilter",
-            "-lavformat",
+            "-Wunused-command-line-argument",
             "-g",
-            // "/Users/zhushijie/cplusheader/jaysonlearn.cpp",
-            "${file}",
-            // "-o",
-            // "${fileDirname}/test"
+            "${file}"
         ],
         "options": {
-            "cwd": "/usr/bin"
+            "cwd": "${workspaceFolder}"
         }
     }],
     "version": "2.0.0"

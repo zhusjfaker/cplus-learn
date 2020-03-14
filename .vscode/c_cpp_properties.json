@@ -4,16 +4,15 @@
             "name": "Mac",
             "browse": {
                 "path": [
-                    "/Users/zhushijie/cplusheader"
+                    "/Users/zhushijie/Desktop/github/extral-header"
                 ]
             },
             "includePath": [
-                "${workspaceFolder}/**",
-                "/Users/zhushijie/cplusheader/**"
+                "${workspaceFolder}/**"
             ],
             "defines": [],
             "macFrameworkPath": [
-                "/Users/zhushijie/cplusheader",
+                "/Users/zhushijie/Desktop/github/extral-header",
                 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
             ],
             "compilerPath": "/usr/bin/clang++",
