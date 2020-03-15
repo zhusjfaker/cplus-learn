@@ -1,6 +1,22 @@
 {
     "tasks": [{
         "type": "shell",
+        "label": "compile ffmpeg",
+        "command": "g++",
+        "args": [
+            "-std=c++11",
+            "-l",
+            "avformat",
+            "-g",
+            "${file}",
+            "-o",
+            "${workspaceFolder}/index"
+        ],
+        "options": {
+            "cwd": "${workspaceFolder}"
+        }
+    },{
+        "type": "shell",
         "label": "test",
         "command": "g++",
         "args": [

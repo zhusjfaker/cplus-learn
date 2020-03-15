@@ -9,7 +9,7 @@
             "type": "lldb",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "program": "${workspaceFolder}/main",
+            "program": "${workspaceFolder}/index",
             "args": []
         }
       
