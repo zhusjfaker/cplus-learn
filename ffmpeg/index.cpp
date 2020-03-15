@@ -7,21 +7,11 @@ extern "C"
 {
 #include "libavformat/avformat.h"
 }
-using namespace std;
 
-string intTostring(int num)
-{
-    int a = num;
-    stringstream ssTemp;
-    ssTemp << a;
-    string strDst = ssTemp.str();
-    return strDst;
-}
+using namespace std;
 
 int main()
 {
-    av_register_all();
-
     AVFormatContext *afc = NULL;
 
     // 打开视频文件
@@ -39,13 +29,14 @@ int main()
 
     unsigned int stream_number = afc->nb_streams;
 
-    printf("%s\n", intTostring(stream_number).c_str());
+    cout << "时长为：" << durTime << endl;
 
-    printf("%s\n", intTostring(durTime).c_str());
+    cout << "流数：" << stream_number << endl;
 
     for (int i = 0; i < stream_number; i++)
     {
-        AVCodecContext *acc = afc->streams[i]->codec;
+        // AVCodecContext *acc = afc->streams[i]->codec;
+        AVCodecParameters *acc = afc->streams[i]->codecpar;
         if (acc->codec_type == AVMEDIA_TYPE_VIDEO)
         {
             AVCodec *codec = avcodec_find_decoder(acc->codec_id);
@@ -53,13 +44,15 @@ int main()
             {
                 cout << "没有该类型解码器" << endl;
             }
-            int ret = avcodec_open2(acc, codec, NULL);
-            if (ret != 0)
-			{
-				char buf[1024] = { 0 };
-				av_strerror(ret, buf, sizeof(buf));
-			}
-			cout << "解码器打开成功" << endl;
+            AVCodecContext *codec_ctx = avcodec_alloc_context3(codec);
+            avcodec_parameters_to_context(codec_ctx, acc);
+            int result = avcodec_open2(codec_ctx, codec, nullptr);
+            if (result != 0)
+            {
+                char buf[1024] = {0};
+                av_strerror(result, buf, sizeof(buf));
+            }
+            cout << "解码器打开成功" << endl;
         }
     }
 
