@@ -5,7 +5,10 @@
 
 extern "C"
 {
+#include "libavcodec/avcodec.h"
 #include "libavformat/avformat.h"
+#include "libavutil/pixfmt.h"
+#include "libswscale/swscale.h"
 }
 
 using namespace std;
@@ -13,6 +16,11 @@ using namespace std;
 int main()
 {
     AVFormatContext *afc = NULL;
+    AVFrame *pFrame, *pFrameRGB;
+    AVPacket packet; //存储压缩编码数据相关信息的结构体
+    uint8_t *out_buffer;
+
+    static struct SwsContext *img_convert_ctx;
 
     // 打开视频文件
     char path[] = "/Users/zhushijie/Downloads/m3u8-demo/a.mp4";
@@ -35,7 +43,6 @@ int main()
 
     for (int i = 0; i < stream_number; i++)
     {
-        // AVCodecContext *acc = afc->streams[i]->codec;
         AVCodecParameters *acc = afc->streams[i]->codecpar;
         if (acc->codec_type == AVMEDIA_TYPE_VIDEO)
         {
@@ -53,6 +60,13 @@ int main()
                 av_strerror(result, buf, sizeof(buf));
             }
             cout << "解码器打开成功" << endl;
+            pFrame = av_frame_alloc();
+            pFrameRGB = av_frame_alloc();
+
+            while (av_read_frame(afc, &packet) > 0)
+            {
+                /* code */
+            }
         }
     }
 

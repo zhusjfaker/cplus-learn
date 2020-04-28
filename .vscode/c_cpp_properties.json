@@ -1,25 +1,20 @@
 {
-    "configurations": [
-        {
-            "name": "Mac",
-            "browse": {
-                "path": [
-                    "/Users/zhushijie/Desktop/github/extral-header"
-                ]
-            },
-            "includePath": [
-                "${workspaceFolder}/**"
-            ],
-            "defines": [],
-            "macFrameworkPath": [
-                "/Users/zhushijie/Desktop/github/extral-header",
-                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
-            ],
-            "compilerPath": "/usr/bin/clang++",
-            "cStandard": "c11",
-            "cppStandard": "c++11",
-            "intelliSenseMode": "clang-x64"
-        }
-    ],
-    "version": 4
+  "configurations": [
+    {
+      "name": "Mac",
+      "browse": {
+        "path": []
+      },
+      "includePath": ["${workspaceFolder}/**"],
+      "defines": [],
+      "macFrameworkPath": [
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+      ],
+      "compilerPath": "/usr/bin/clang++",
+      "cStandard": "c11",
+      "cppStandard": "c++11",
+      "intelliSenseMode": "clang-x64"
+    }
+  ],
+  "version": 4
 }

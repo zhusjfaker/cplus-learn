@@ -1,6 +1,16 @@
 {
     "tasks": [{
         "type": "shell",
+        "label": "emcc init",
+        "command": "source",
+        "args": [
+            "emsdk_env.sh"
+        ],
+        "options": {
+            "cwd": "/Users/zhushijie/emsdk"
+        }
+    },{
+        "type": "shell",
         "label": "compile ffmpeg",
         "command": "g++",
         "args": [
@@ -23,21 +33,6 @@
             "-std=c++11",
             "-g",
             "${file}",
-            "-o",
-            "${workspaceFolder}/index"
-        ],
-        "options": {
-            "cwd": "${workspaceFolder}"
-        }
-    },{
-        "type": "shell",
-        "label": "testoutput",
-        "command": "g++",
-        "args": [
-            "-std=c++11",
-            "-g",
-            "${file}",
-            "./abc/abc.cpp",
             "-o",
             "${workspaceFolder}/index"
         ],
