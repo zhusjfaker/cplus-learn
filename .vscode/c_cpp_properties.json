@@ -5,7 +5,10 @@
       "browse": {
         "path": []
       },
-      "includePath": ["${workspaceFolder}/**"],
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/Users/zhushijie/emsdk/emscripten/incoming/system/include/**"
+      ],
       "defines": [],
       "macFrameworkPath": [
         "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
