@@ -23,20 +23,23 @@
         "${workspaceFolder}/index"
       ],
       "options": {
-        "cwd": "${workspaceFolder}"
+        "cwd": "${workspaceFolder}",
+        "shell": {
+          "executable": "zsh"
+        }
       }
     },
     {
       "type": "shell",
       "label": "test",
-      "command": "clang",
+      "command": "g++",
       "args": [
         "-std=c++11",
-        "-l",
-        "emscripten",
+        "-I",
+        "/Users/zhushijie/emsdk/emscripten/incoming/system/include",
         "-g",
         "-o",
-        "${workspaceFolder}/index.bc",
+        "${workspaceFolder}/index",
         "${file}"
       ],
       "options": {

@@ -6,8 +6,8 @@
         "path": []
       },
       "includePath": [
-        "${workspaceFolder}/**",
-        "/Users/zhushijie/emsdk/emscripten/incoming/system/include/**"
+        "/Users/zhushijie/emsdk/emscripten/incoming/system/include/**",
+        "${workspaceFolder}/**"
       ],
       "defines": [],
       "macFrameworkPath": [
