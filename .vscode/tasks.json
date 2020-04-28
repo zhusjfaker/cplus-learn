@@ -1,58 +1,63 @@
 {
-    "tasks": [{
-        "type": "shell",
-        "label": "emcc init",
-        "command": "source",
-        "args": [
-            "emsdk_env.sh"
-        ],
-        "options": {
-            "cwd": "/Users/zhushijie/emsdk"
-        }
-    },{
-        "type": "shell",
-        "label": "compile ffmpeg",
-        "command": "g++",
-        "args": [
-            "-std=c++11",
-            "-l",
-            "avformat",
-            "-g",
-            "${file}",
-            "-o",
-            "${workspaceFolder}/index"
-        ],
-        "options": {
-            "cwd": "${workspaceFolder}"
-        }
-    },{
-        "type": "shell",
-        "label": "test",
-        "command": "g++",
-        "args": [
-            "-std=c++11",
-            "-g",
-            "${file}",
-            "-o",
-            "${workspaceFolder}/index"
-        ],
-        "options": {
-            "cwd": "${workspaceFolder}"
-        }
-    },{
-        "type": "shell",
-        "label": "compile",
-        "command": "g++",
-        "args": [
-            "-std=c++11",
-            "-c",
-            "-Wunused-command-line-argument",
-            "-g",
-            "${file}"
-        ],
-        "options": {
-            "cwd": "${workspaceFolder}"
-        }
-    }],
-    "version": "2.0.0"
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "emcc init",
+      "command": "source",
+      "args": ["emsdk_env.sh"],
+      "options": {
+        "cwd": "/Users/zhushijie/emsdk"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "compile ffmpeg",
+      "command": "g++",
+      "args": [
+        "-std=c++11",
+        "-l",
+        "avformat",
+        "-g",
+        "${file}",
+        "-o",
+        "${workspaceFolder}/index"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "test",
+      "command": "clang",
+      "args": [
+        "-std=c++11",
+        "-l",
+        "emscripten",
+        "-g",
+        "-o",
+        "${workspaceFolder}/index.bc",
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "compile",
+      "command": "g++",
+      "args": [
+        "-std=c++11",
+        "-c",
+        "-Wunused-command-line-argument",
+        "-g",
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  ],
+  "version": "2.0.0"
 }

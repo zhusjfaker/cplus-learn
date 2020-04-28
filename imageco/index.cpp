@@ -6,18 +6,16 @@
 
 using namespace std;
 
-unsigned char *drawpic()
+char *drawpic()
 {
-    fstream file;
-    file.open("/Users/zhushijie/Desktop/abc.jpeg", ios_base::binary);
+    fstream file("/Users/zhushijie/Desktop/ssh.txt", ios::in|ios::binary|ios::ate);
     file.seekg(0, ios::end);
     size_t srcSize = file.tellg();
     cout << "文件大小" << srcSize << endl;
-    unsigned char *memo = new unsigned char[srcSize]; //存储读取字符串
+    char *memo = new char[srcSize]; //存储读取字符串
     file.read(memo, srcSize);
     cout << "数据数组" << memo << endl;
     file.close();
-    file.clear();
     return memo;
 }
 
