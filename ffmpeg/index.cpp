@@ -23,11 +23,12 @@ int main()
     static struct SwsContext *img_convert_ctx;
 
     // 打开视频文件
-    char path[] = "/Users/zhushijie/Downloads/m3u8-demo/a.mp4";
+    char path[] = "/Users/zhushijie/Desktop/m3u8-demo/test.mp4";
     int open_result = avformat_open_input(&afc, path, 0, 0);
     if (open_result < 0)
     {
         cout << "找不到视频文件" << endl;
+        return 1;
     }
     else
     {

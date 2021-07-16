@@ -1,64 +1,23 @@
 {
   "tasks": [
     {
+      "label": "Cpp complie",
       "type": "shell",
-      "label": "emcc init",
-      "command": "source",
-      "args": ["emsdk_env.sh"],
-      "options": {
-        "cwd": "/Users/zhushijie/emsdk"
-      }
-    },
-    {
-      "type": "shell",
-      "label": "compile ffmpeg",
       "command": "g++",
       "args": [
         "-std=c++11",
         "-l",
         "avformat",
-        "-g",
-        "${file}",
+        "${workspaceFolder}/ffmpeg/index.cpp",
         "-o",
-        "${workspaceFolder}/index"
+        "${workspaceFolder}/${fileBasenameNoExtension}.out",
+        "-g"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
         "shell": {
           "executable": "zsh"
         }
-      }
-    },
-    {
-      "type": "shell",
-      "label": "test",
-      "command": "g++",
-      "args": [
-        "-std=c++11",
-        "-I",
-        "/Users/zhushijie/emsdk/emscripten/incoming/system/include",
-        "-g",
-        "-o",
-        "${workspaceFolder}/index",
-        "${file}"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      }
-    },
-    {
-      "type": "shell",
-      "label": "compile",
-      "command": "g++",
-      "args": [
-        "-std=c++11",
-        "-c",
-        "-Wunused-command-line-argument",
-        "-g",
-        "${file}"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
       }
     }
   ],

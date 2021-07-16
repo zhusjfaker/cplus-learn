@@ -1,0 +1,10 @@
+{
+  "arrowParens": "avoid",
+  "printWidth": 80,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "endOfLine": "auto",
+  "prettier.trailingComma": "es5"
+}
